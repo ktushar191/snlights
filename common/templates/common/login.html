@@ -1,0 +1,51 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mobile or Email</title>
+    <link rel="stylesheet" href="{% static 'common/css/login.css' %}">
+</head>
+<body>
+
+    <!-- Login Form -->
+    <div class="login-container" id="login-form">
+        <h2>Login</h2>
+        <form id="login-form-element">
+            <label for="email_or_mobile">Email or Mobile:</label>
+            <input type="text" id="email_or_mobile" name="email_or_mobile" placeholder="Enter email or mobile number" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <button type="submit">Login</button>
+        </form>
+        <a href="javascript:void(0);" onclick="showForgotPassword()">Forgot Password?</a>
+    </div>
+
+    <!-- Forgot Password Form -->
+    <div class="forgot-password-container" id="forgot-password-form" style="display: none;">
+        <h2>Forgot Password</h2>
+        <form id="forgot-password-form-element">
+            <label for="forgot-email_or_mobile">Email or Mobile:</label>
+            <input type="text" id="forgot-email_or_mobile" name="email_or_mobile" placeholder="Enter email or mobile number" required>
+            <button type="submit">Submit</button>
+        </form>
+        <a href="javascript:void(0);" onclick="showLogin()">Back to Login</a>
+    </div>
+
+    <!-- Reset Password Form -->
+    <div class="reset-password-container" id="reset-password-form" style="display: none;">
+        <h2>Reset Password</h2>
+        <form id="reset-password-form-element">
+            <label for="new-password">New Password:</label>
+            <input type="password" id="new-password" name="new-password" placeholder="Enter new password" required>
+            <button type="submit">Reset Password</button>
+        </form>
+        <a href="javascript:void(0);" onclick="showLogin()">Back to Login</a>
+    </div>
+
+    <script src="{% static 'common/js/login.js' %}"></script>
+</body>
+</html>

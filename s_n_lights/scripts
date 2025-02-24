@@ -1,0 +1,47 @@
+CREATE TABLE `snlights`.`add_company` (
+    company_id INT AUTO_INCREMENT PRIMARY KEY,  
+    company_name VARCHAR(255) NOT NULL,         
+    address TEXT,                              
+    contact_number VARCHAR(15),                
+    other_information VARCHAR(255)
+) ENGINE = InnoDB;
+
+INSERT INTO `snlights`.`add_company` 
+(company_name, address, contact_number, other_information)
+VALUES 
+('Surya', '123 Business St, City, Country', '1234567890', 'Additional company details here');
+
+SELECT * FROM snlights.add_company;
+
+CREATE TABLE `snlights`.`add_category` (
+    category_id INT AUTO_INCREMENT PRIMARY KEY,  
+    category_name VARCHAR(255) NOT NULL,
+);
+
+INSERT INTO `snlights`.`add_category`
+(category_name) VALUES
+('Electronics');
+
+SELECT * FROM snlights.add_category;
+
+
+CREATE TABLE `snlights`.`login` (
+    id INT AUTO_INCREMENT PRIMARY KEY,  
+    email VARCHAR(255) UNIQUE,          
+    mobile_number VARCHAR(15) UNIQUE,   
+    password VARCHAR(255) NOT NULL,     
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP  
+);
+
+INSERT INTO `snlights`.`login` (email, password)
+VALUES 
+('user1@example.com', 'password1'),
+('user2@example.com', 'password2');
+
+
+INSERT INTO `snlights`.`login` (mobile_number, password)
+VALUES 
+('1234567891', 'password3'),
+('1234567892', 'password4');
+
+SELECT * FROM snlights.login;

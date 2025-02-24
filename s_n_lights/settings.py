@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-
+import pymysql
+pymysql.version_info=(1,4,6,'final',0)
+pymysql.install_as_MySQLdb()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -30,7 +32,7 @@ DB_CREDENTIALS={
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'snlights',
         'USER': 'root',
-        'PASSWORD': 'iims@123',
+        'PASSWORD': 'manisha20',
         'HOST':'127.0.0.1',
         'PORT':'3306',
 }
