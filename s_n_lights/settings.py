@@ -32,7 +32,7 @@ DB_CREDENTIALS={
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'snlights',
         'USER': 'root',
-        'PASSWORD': 'manisha20',
+        'PASSWORD': 'iims@123',
         'HOST':'127.0.0.1',
         'PORT':'3306',
 }
