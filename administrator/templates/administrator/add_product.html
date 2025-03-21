@@ -1,0 +1,54 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Form</title>
+    <link rel="stylesheet" href="{% static 'css/addproduct.css' %}">
+
+
+</head>
+<body>
+    <div class="container">
+        <h2>Product Form</h2>
+        <form id="product-form">
+            <div class="form-group">
+                <label for="product-image">Product Image:</label>
+                <input type="file" id="product-image" name="product-image" accept="image/*">
+            </div>
+            <div class="form-group">
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" name="product-name" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price ($):</label>
+                <input type="number" id="price" name="price" required>
+            </div>
+            <div class="form-group">
+                <label for="company-name">Company Name:</label>
+                <input type="text" id="company-name" name="company-name" required>
+            </div>
+            
+            <!-- Dynamic Material Type Section -->
+            <div id="material-types" class="form-group">
+                <label for="material-type">Material Type:</label>
+                <input type="text" name="material-type[]" placeholder="Enter material type" required>
+            </div>
+            
+            
+            <!-- Dynamic Additional Fields Section -->
+            <div id="additional-fields"></div>
+            <button type="button" onclick="addAdditionalField()">Add Additional Field</button>
+            
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="{% static 'js/product_script.js' %}"></script>
+</body>
+</html>

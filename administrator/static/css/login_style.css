@@ -1,0 +1,104 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Login Form Container */
+.box {
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box h2 {
+    color: #1e3a8a;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.inputBx {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.inputBx input {
+    width: 100%;
+    padding: 14px 20px;
+    padding-left: 40px; /* Space for the icon */
+    font-size: 16px;
+    color: #1e3a8a;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Input Field Placeholder Style */
+.inputBx input::placeholder {
+    color: #80c4e0;
+}
+
+/* Icon inside Input */
+.inputBx img {
+    position: absolute;
+    top: 50%;
+    left: 15px; /* Position the icon */
+    transform: translateY(-50%); /* Vertically center the icon */
+    width: 20px; /* Set the icon size */
+    height: 20px;
+    filter: invert(1); /* Ensure the icon is white */
+}
+
+/* Submit Button Styling */
+.inputBx input[type="submit"] {
+    background: #1e3a8a;
+    color: white;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.inputBx input[type="submit"]:hover {
+    background-color: #1565c0;
+}
+
+.inputBx input:focus {
+    border-color: #1e3a8a;
+    box-shadow: inset 0 0 25px rgba(30, 58, 138, 0.4);
+}
+
+.remember {
+    color: #1e3a8a;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.box p {
+    color: #80c4e0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.box a {
+    color: #1e3a8a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.box a:hover {
+    text-decoration: underline;
+}

@@ -1,9 +1,12 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
+/* Body Styling */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f7fc;
@@ -13,73 +16,107 @@ body {
   height: 100vh;
 }
 
-.form-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Login Form Container */
+.box {
   width: 100%;
-  max-width: 400px;
+  max-width: 400px; /* Maintain original max-width for the box */
+  margin: 0 auto;
+  padding: 60px; /* Increased padding for more space */
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-h2 {
+/* Heading Styling */
+.box h2 {
   text-align: center;
-  color: #333;
+  font-size: 24px; /* Increased font size */
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 30px; /* Larger margin below title */
+}
+
+/* Input Box Styling */
+.inputBx {
+  position: relative;
   margin-bottom: 20px;
 }
 
-.input-group {
-  margin-bottom: 15px;
-}
-
-.input-group label {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 5px;
-  display: block;
-}
-
-.input-group input {
+/* Input Field Styling */
+.inputBx input {
   width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  outline: none;
+  padding: 16px 24px; /* Larger padding for inputs */
+  font-size: 16px; /* Larger font size */
+  padding-left: 40px; /* Space for the icon */
+  color: #1e3a8a;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
-.input-group input:focus {
-  border-color: #6c5ce7;
+/* Input Field Placeholder Styling */
+.inputBx input::placeholder {
+  color: #80c4e0;
 }
 
-.button-group {
-  display: flex;
-  justify-content: space-between;
+/* Icon inside Input */
+.inputBx img {
+  position: absolute;
+  top: 50%;
+  left: 15px; /* Position the icon */
+  transform: translateY(-50%); /* Vertically center the icon */
+  width: 20px; /* Set the icon size */
+  height: 20px;
+  filter: invert(1); /* Ensure the icon is white */
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 14px;
-  border: none;
-  border-radius: 4px;
+/* Submit Button Styling */
+.inputBx input[type="submit"] {
+  background: #1e3a8a;
+  color: white;
+  font-weight: 600;
+  padding: 14px 30px; /* Larger button padding */
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-button#saveBtn {
-  background-color: #27ae60;
-  color: #fff;
+.inputBx input[type="submit"]:hover {
+  background-color: #1565c0;
 }
 
-button#saveBtn:hover {
-  background-color: #2ecc71;
+/* Focus Effects for Input Fields */
+.inputBx input:focus {
+  border-color: #1e3a8a;
+  box-shadow: inset 0 0 25px rgba(30, 58, 138, 0.4);
 }
 
-button#editBtn {
-  background-color: #f39c12;
-  color: #fff;
+/* Remember Text Styling */
+.remember {
+  color: #1e3a8a;
+  font-weight: 300;
+  margin-bottom: 10px;
 }
 
-button#editBtn:hover {
-  background-color: #e67e22;
+/* Paragraph Styling */
+.box p {
+  color: #80c4e0;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Link Styling */
+.box a {
+  color: #1e3a8a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.box a:hover {
+  text-decoration: underline;
 }

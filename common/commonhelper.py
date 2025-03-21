@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib import messages
-import mysql.connector
+# import mysql.connector
 from django.conf import settings
 from easy_thumbnails.files import get_thumbnailer
 from random import randint
@@ -89,3 +89,4 @@ def getUserProfileByUser(username):
     cur.close()
     conn.close()
     return user_profile
+

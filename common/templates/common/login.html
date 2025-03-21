@@ -48,4 +48,65 @@
 
     <script src="{% static 'common/js/login.js' %}"></script>
 </body>
-</html>
+{% block javascript %}
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#err_email').hide()||
+        $('#err_contact').hide();
+        $('#err_password').hide();
+    });
+
+    function login(id) {
+        $('#login').submit();
+    }
+
+    function form_submit(e) {
+        var form_valid = is_form_valid();
+        if (form_valid) {
+            return true;
+        } else {
+            e.preventDefault();
+            return false;
+        }
+    }
+
+    function is_form_valid() {
+        var flag = true;
+        var lemail = $('#email').val();
+        var lcontact = $('#contact_number').val();
+        var lpassword = $('#password').val();
+    
+        // Check if either email or contact is valid
+        if (lemail == '' || lemail == 'undefined') {
+            $('#err_lemail').show();
+            flag = false;
+        } else {
+            $('#err_lemail').hide();
+        }
+    
+        if (lcontact == '' || lcontact == 'undefined') {
+            $('#err_lcontact').show();
+            flag = false;
+        } else {
+            $('#err_lcontact').hide();
+        }
+        if (lpassword == '' || lpassword == 'undefined') {
+            $('#err_lpassword').show();
+            flag = false;
+        } else {
+            $('#err_lpassword').hide();
+        }
+    
+        // If both fields are empty, show an error
+        if (lemail == '' && lcontact == '') {
+            $('#err_lemail').show();
+            $('#err_lcontact').show();
+            flag = false;
+        }
+    
+        return flag;
+    }
+</script>
+    {% endblock %}    
+    </html>

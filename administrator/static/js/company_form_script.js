@@ -3,13 +3,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const editButton = document.getElementById("editButton");
     const deleteButton = document.getElementById("deleteButton");
     const contactNumber = document.getElementById("contact_number");
+    const errorMessages = document.getElementById("errorMessages"); // Assuming you have an element for displaying error messages
 
-    // Contact number validation on input
-    contactNumber.addEventListener("input", () => {
-        if (contactNumber.value.length !== 10) {
-            contactNumber.setCustomValidity("Contact number must be 10 digits");
+    // Function to show error message
+    function showError(message) {
+        errorMessages.innerHTML = `<div style="color: red;">${message}</div>`;
+        contactNumber.setCustomValidity(message); // Set custom validity message
+    }
+
+    // Validate Contact Number on input
+    contactNumber.addEventListener('input', () => {
+        const contactValue = contactNumber.value;
+
+        // Validate that contact number only contains digits and is at most 10 digits long
+        if (contactValue.length > 10) {
+            showError('Contact number must be at most 10 digits.');
+        } else if (contactValue.length === 10 && !/^\d{10}$/.test(contactValue)) {
+            showError('Contact number must be exactly 10 digits.');
+        } else if (!/^\d*$/.test(contactValue)) {  // Check if the contact number contains only digits
+            showError('Contact number can only contain digits (no letters or special characters).');
         } else {
-            contactNumber.setCustomValidity("");
+            errorMessages.innerHTML = ''; // Clear any previous error messages
+            contactNumber.setCustomValidity(""); // Clear custom validity
         }
     });
 

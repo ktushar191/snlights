@@ -2,26 +2,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add Category</title>
-  <link rel="stylesheet" href="{% static 'css/add_category_styles.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Category</title>
+    <link rel="stylesheet" href="{% static 'css/add_category_styles.css' %}">
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
 </head>
 <body>
-  <div class="form-container">
-    <h2>Add Category</h2>
-    <form id="categoryForm">
-      <div class="input-group">
-        <label for="categoryName">Category Name</label>
-        <input type="text" id="categoryName" name="categoryName" required placeholder="Enter category name">
-      </div>
-      <div class="button-group">
-        <button type="button" id="saveBtn" onclick="saveCategory()">Save</button>
-        <button type="button" id="editBtn" onclick="editCategory()">Edit</button>
-      </div>
-    </form>
-  </div>
+    <div class="container">
+        <h1 align="center">Add Category</h1>
+        <form onsubmit="return form_submit(event);" id="add_category" name="add_category" action="." method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="category_name">Category Name:</label>
+                <input type="text" id="category_name" name="category_name" required>
+                <span id="err_category_name" name="err_category_name" style="color: red;">Enter Category Name</span>
+            </div>
 
-  <script src="{% static 'js/add_category_script.js' %}"></script>
+            <!-- <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+            </div> -->
+
+            <div class="form-actions">
+                <button type="button" id="saveButton" onclick="addCategory(this);">Save</button>
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Hide error messages on page load
+            $('#err_category_name').hide();
+            //$('#err_description').hide();
+        });
+
+        function addCategory(id) {
+            $('#add_category').submit(); // Submit the form (add or edit depending on the scenario)
+        }
+
+        function form_submit(e) {
+            var form_valid = is_form_valid(); // Validate the form before submission
+            if (form_valid) {
+                return true; // Allow form submission
+            } else {
+                e.preventDefault(); // Prevent form submission if invalid
+                return false;
+            }
+        }
+
+        function is_form_valid() {
+            var flag = true;
+            var categoryName = $('#category_name').val();
+            //var description = $('#description').val();
+
+            // Check if the category name is empty or undefined
+            if (categoryName == '' || categoryName == 'undefined') {
+                $('#err_category_name').show(); // Show error message
+                flag = false;
+            } else {
+                $('#err_category_name').hide(); // Hide error message
+            }
+
+            // Check if the description is empty or undefined
+            //if (description == '' || description == 'undefined') {
+                /*('#err_description').show(); // Show error message
+                flag = false;
+            } else {
+                $('#err_description').hide(); // Hide error message
+            }*/
+
+            return flag; // Return whether the form is valid
+        }
+    </script>
 </body>
 </html>

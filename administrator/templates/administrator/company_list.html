@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company List</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Companies</h1>
+        <table id="customers" border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Company Name</th>
+                    <th>Address</th>
+                    <th>Contact Number</th>
+                    <th>Other Information</th>
+                    <th colspan="2" id="mid">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for company in company_details %}
+                    <tr>
+                        <td>{{ company.company_id }}</td>
+                        <td>{{ company.company_name }}</td>
+                        <td>{{ company.address }}</td>
+                        <td>{{ company.contact_number }}</td>
+                        <td>{{ company.other_information }}</td>
+                        <td>
+                            <a href="update/{{ company.id }}"><button id="up">Update</button></a>
+                        </td>
+                        <td>
+                            <a href="delete/{{ company.id }}"><button id="del">Delete</button></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br><br>
+        <a href="{% url 'add_company' %}"><button id="new3">Add Company</button></a>
+    </div>
+</body>
+</html>

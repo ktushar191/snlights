@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dash_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'product.css' %}">
+    <link rel="stylesheet" href="{% static 'add_company_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'add_category_styles.css' %}">
+    <script src="{% static 'dash_script.js' %}" defer></script> <!-- Link to external JS -->
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header with Logo, Company Name, and Search Bar -->
+        <header class="header">
+            <div class="logo-container">
+                <img src="{% static 'common\images\S_N_images\sn-lights-logo-120x120.webp' %}" alt="Company Logo" class="logo">
+                <h1>S N Lights Pvt Ltd</h1>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-bar">
+            </div>
+            <div class="profile-container">
+                <!-- Profile Logo that Admin can Click -->
+                <img src="{% static 'images\blue-circle-with-white-user_78370-4707.avif' %}" alt="Admin Profile" class="profile-img" onclick="toggleDropdown()">
+                <div id="profileDropdown" class="profile-dropdown">
+                    <ul>
+                        <li><a href="#" onclick="viewProfile()">View Profile</a></li>
+                        <li><a href="#" onclick="logout()">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Left Section - Full-height Navigation Tabs -->
+            <div class="left-section">
+                <ul class="tabs">
+                    <!-- Login Tab -->
+                    <li><a href="{% url 'login' %}" onclick="showLoginForm()"target="contentArea">Login</a></li>
+        
+                    <!-- Add Product Tab with Sub-tabs -->
+                    <li>
+                        <a href="#" onclick="toggleSubTabs('addProductSubTabs')"> Product</a>
+                        <ul class="sub-tabs" id="addProductSubTabs" style="display: none;">
+                            <li><a href="administrator/add_product" target="contentArea">Add Product</a></li>
+                            <li><a href="administrator/edit_product" target="contentArea">Edit Product</a></li>
+                            <li><a href="administrator/delete_product" target="contentArea">Delete Product</a></li>
+                        </ul>
+                    </li>
+        
+                    <!-- Add Company Tab with Sub-tabs -->
+                    <li>
+                        <a href="#" onclick="toggleSubTabs('addCompanySubTabs')"> Company</a>
+                        <ul class="sub-tabs" id="addCompanySubTabs" style="display: none;">
+                            <li><a href="/administrator/add_company" >Add Company</a></li>
+                            <li><a href="/administrator/company_list" >Edit Company</a></li>
+
+                            <li><a href="/administrator/delete_company" >Delete Company</a></li>
+                        </ul>
+                    </li>
+        
+                    <!-- Add Category Tab with Sub-tabs -->
+                    <li>
+                        <a href="#" onclick="toggleSubTabs('addCategorySubTabs')"> Category</a>
+                        <ul class="sub-tabs" id="addCategorySubTabs" style="display: none;">
+                            <li><a href="/administrator/add_category" >Add Category</a></li>
+                            <li><a href="/administrator/edit_category" >Edit Category</a></li>
+                            <li><a href="/administrator/delete_category" >Delete Category</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+            <!-- Middle Section - Content Area (This is where the dynamic content goes) -->
+            <div class="middle-section">
+                <div id="contentArea">
+                    <h2>Welcome to Admin Dashboard</h2>
+                </div>
+            </div>
+            <div class="form-container" id="formContainer" style="display: none;">
+                <!-- Dynamic form content will be loaded here -->
+                 
+            </div>
+        </div>
+        
+<script>
+    // JavaScript function to toggle visibility of sub-tabs
+    function toggleSubTabs(subTabId) {
+        const subTabs = document.getElementById(subTabId);
+        subTabs.style.display = subTabs.style.display === 'none' ? 'block' : 'none';
+    }
+
+    document.querySelectorAll('a[target="contentArea"]').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const url = this.getAttribute('href');
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('contentArea').innerHTML = html;
+                })
+                .catch(error => console.error('Error loading content:', error));
+        });
+    });
+    
+
+    // Function to initialize form validation and hide error messages
+    function initializeCompanyForm() {
+        $(document).ready(function() {
+            $('#err_name').hide();
+            $('#err_address').hide();
+            $('#err_contact').hide();
+        });
+    } 
+    // Toggle dropdown visibility
+    function toggleDropdown() {
+        var dropdown = document.getElementById('profileDropdown');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // View Profile Function
+    function viewProfile() {
+        alert("View Profile functionality goes here.");
+    }
+
+    // Logout Function
+    function logout() {
+        alert("Logged out successfully.");
+        // Add your logout logic here (e.g., redirect to login page, clear session, etc.)
+    }
+
+    // Close dropdown if clicked outside
+    window.onclick = function(event) {
+        if (!event.target.matches('.profile-img')) {
+            var dropdown = document.getElementById('profileDropdown');
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            }
+        }
+    }
+</script>
+
+    
+        </div>
+    </div>
+</body>
+</html>

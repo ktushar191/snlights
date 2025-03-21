@@ -32,7 +32,7 @@ DB_CREDENTIALS={
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'snlights',
         'USER': 'root',
-        'PASSWORD': 'iims@123',
+        'PASSWORD': 'manisha20',
         'HOST':'127.0.0.1',
         'PORT':'3306',
 }
@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'common',
     'administrator',
-    'customer'
+    'customer',
+    'easy_thumbnails'
 ]
 
 MIDDLEWARE = [

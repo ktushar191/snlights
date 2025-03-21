@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/login_style.css' %}">
+        <script src="{% static 'js/login_script.js' %}" defer></script> <!-- Link to external JS -->
+    </head>
+    <body>
+        <section>
+            <div class="box">
+                <div class="form">
+                    <h2>Login</h2>
+                    <form id="loginForm" onsubmit="return validateForm()">
+                        <div class="inputBx">
+                            <input type="text" id="username" placeholder="Username">
+                            <!-- <img src="user.png" alt="user icon"> -->
+                        </div>
+                        <div class="inputBx">
+                            <input type="password" id="password" placeholder="Password">
+                            <!-- <img src="lock.png" alt="lock icon"> -->
+                        </div>
+                        <label class="remember">
+                            <input type="checkbox" id="remember">Remember Me
+                        </label>
+                        <div class="inputBx">
+                            <input type="submit" value="Login">
+                        </div>
+                    </form>
+                    <p>Forgot <a href="forgot_password.html">Password</a></p>
+                    <p>Need an <a href="need_account.html">Account</a></p>
+
+                    <!-- Success Message Popup -->
+                    <div id="successModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-btn" onclick="closeModal()">&times;</span>
+                            <h2>Login Successful!</h2>
+                            <p>Welcome to your dashboard.</p>
+                            <button onclick="closeModal()">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

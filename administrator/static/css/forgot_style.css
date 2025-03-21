@@ -1,0 +1,220 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #cce7ff; /* Soft sky blue background */
+}
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #cce7ff; /* Soft sky blue background */
+}
+
+.box {
+    position: relative;
+    padding: 40px;
+    width: 360px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15); /* Slightly transparent background */
+    border-radius: 20px; /* Softer, rounded corners */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+}
+
+.box .form h2 {
+    color: #1e3a8a;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.box .form .inputBx {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.box .form .inputBx input {
+    width: 100%;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Transparent border */
+    background: transparent;
+    padding: 14px 20px;
+    padding-left: 40px;
+    border-radius: 10px;
+    color: #1e3a8a;
+    font-size: 16px;
+    font-weight: 400;
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.box .form .inputBx input::placeholder {
+    color: #80c4e0; /* Light sky blue for the placeholder */
+}
+
+.box .form .inputBx input[type="submit"] {
+    background: #1e3a8a; /* Dark blue background for submit */
+    color: #fff;
+    max-width: 180px;
+    padding: 12px 20px;
+    box-shadow: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.box .form .inputBx input[type="submit"]:hover {
+    background-color: #1565c0; /* Darker blue when hovered */
+}
+
+.box .form .inputBx img {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    transform: scale(0.75);
+    filter: invert(1);
+}
+
+.box .form .inputBx input:focus {
+    border-color: #1e3a8a;
+    box-shadow: inset 0 0 25px rgba(30, 58, 138, 0.4);
+}
+
+.box .form p {
+    color: #80c4e0;
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.box .form a {
+    color: #1e3a8a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.box .form a:hover {
+    text-decoration: underline;
+}
+
+.box {
+    position: relative;
+    padding: 40px;
+    width: 360px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15); /* Slightly transparent background */
+    border-radius: 20px; /* Softer, rounded corners */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+}
+
+.box .form h2 {
+    color: #1e3a8a;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.box .form .inputBx {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.box .form .inputBx input {
+    width: 100%;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Transparent border */
+    background: transparent;
+    padding: 14px 20px;
+    padding-left: 40px;
+    border-radius: 10px;
+    color: #1e3a8a;
+    font-size: 16px;
+    font-weight: 400;
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.box .form .inputBx input::placeholder {
+    color: #80c4e0; /* Light sky blue for the placeholder */
+}
+
+.box .form .inputBx input[type="submit"] {
+    background: #1e3a8a; /* Dark blue background for submit */
+    color: #fff;
+    max-width: 180px;
+    padding: 12px 20px;
+    box-shadow: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.box .form .inputBx input[type="submit"]:hover {
+    background-color: #1565c0; /* Darker blue when hovered */
+}
+
+.box .form .inputBx img {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    transform: scale(0.75);
+    filter: invert(1);
+}
+
+.box .form .inputBx input:focus {
+    border-color: #1e3a8a;
+    box-shadow: inset 0 0 25px rgba(30, 58, 138, 0.4);
+}
+
+.box .form p {
+    color: #80c4e0;
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.box .form a {
+    color: #1e3a8a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.box .form a:hover {
+    text-decoration: underline;
+}

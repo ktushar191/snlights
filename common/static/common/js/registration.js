@@ -1,29 +1,43 @@
-// Wait for the DOM to load before attaching events
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById('registrationForm');
-    
-    form.addEventListener('submit', function(event) {
-      let valid = true;
-  
-      // Validation for mobile number
-      const mobile = document.getElementById('mobile').value;
-      const mobileRegex = /^\d{10}$/;
-      if (!mobile.match(mobileRegex)) {
-        alert('Please enter a valid 10-digit mobile number');
-        valid = false;
-      }
-  
-      // Validation for postal code
-      // const postal = document.getElementById('postal').value;
-      // const postalRegex = /^\d{5}$/;
-      // if (!postal.match(postalRegex)) {
-      //   alert('Please enter a valid 6-digit postal code');
-      //   valid = false;
-      // }
-  
-      if (!valid) {
-        event.preventDefault();  // Prevent form submission if validation fails
-      }
-    });
-  });
-  
+function validateForm() {
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+  const mobile = document.getElementById('mobile').value;
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+
+  // Username Validation
+  if (username === '') {
+      alert('Username is required');
+      return false;
+  }
+
+  // Email Validation
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  if (!emailPattern.test(email)) {
+      alert('Please enter a valid email address');
+      return false;
+  }
+
+  // Mobile Validation (Assuming a 10-digit number)
+  const mobilePattern = /^\d{10}$/;
+  if (!mobilePattern.test(mobile)) {
+      alert('Please enter a valid 10-digit mobile number');
+      return false;
+  }
+
+  // Password Validation
+  if (password === '') {
+      alert('Password is required');
+      return false;
+  }
+
+  // Confirm Password Validation
+  if (confirmPassword !== password) {
+      alert('Passwords do not match');
+      return false;
+  }
+
+  // If all validations pass
+  alert('Registration Successful!');
+  return true; // Allow form submission
+}
