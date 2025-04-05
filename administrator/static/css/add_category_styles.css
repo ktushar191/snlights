@@ -6,51 +6,40 @@
   font-family: 'Arial', sans-serif;
 }
 
-/* Body Styling */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f7fc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-/* Login Form Container */
-.box {
+/* Container for the Product Form */
+.container {
+  padding: 30px;
   width: 100%;
-  max-width: 400px; /* Maintain original max-width for the box */
-  margin: 0 auto;
-  padding: 60px; /* Increased padding for more space */
-  background: rgba(255, 255, 255, 0.9);
+  max-width: 600px; /* Limit the width of the form */
+  background: rgba(255, 255, 255, 0.9); /* Slightly opaque white background */
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  margin: 0 auto; /* Center the form */
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* Heading Styling */
-.box h2 {
-  text-align: center;
-  font-size: 24px; /* Increased font size */
-  font-weight: 700;
+/* Title Styling */
+.container h1 {
   color: #1e3a8a;
-  margin-bottom: 30px; /* Larger margin below title */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px; /* Reduced margin between title and form */
 }
 
-/* Input Box Styling */
-.inputBx {
+/* Form Group Styling */
+.form-group {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Reduced margin between fields */
 }
 
-/* Input Field Styling */
-.inputBx input {
+/* Input Styles */
+.form-group input {
   width: 100%;
-  padding: 16px 24px; /* Larger padding for inputs */
-  font-size: 16px; /* Larger font size */
-  padding-left: 40px; /* Space for the icon */
+  padding: 12px 20px; /* Reduced padding for better fitting */
+  padding-left: 30px; /* Adjusted left padding */
+  font-size: 14px; /* Slightly smaller font size */
   color: #1e3a8a;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -59,64 +48,52 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-/* Input Field Placeholder Styling */
-.inputBx input::placeholder {
+.form-group input::placeholder {
   color: #80c4e0;
 }
 
-/* Icon inside Input */
-.inputBx img {
-  position: absolute;
-  top: 50%;
-  left: 15px; /* Position the icon */
-  transform: translateY(-50%); /* Vertically center the icon */
-  width: 20px; /* Set the icon size */
-  height: 20px;
-  filter: invert(1); /* Ensure the icon is white */
-}
-
 /* Submit Button Styling */
-.inputBx input[type="submit"] {
+.form-group button[type="button"] {
   background: #1e3a8a;
   color: white;
   font-weight: 600;
-  padding: 14px 30px; /* Larger button padding */
+  padding: 10px 20px; /* Reduced padding */
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%; /* Button takes full width of form */
 }
 
-.inputBx input[type="submit"]:hover {
+.form-group button[type="button"]:hover {
   background-color: #1565c0;
 }
 
-/* Focus Effects for Input Fields */
-.inputBx input:focus {
+/* Error Message Styling */
+#err_category_name {
+  display: none;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Focus and Hover Effects */
+.form-group input:focus {
   border-color: #1e3a8a;
   box-shadow: inset 0 0 25px rgba(30, 58, 138, 0.4);
 }
 
-/* Remember Text Styling */
-.remember {
+/* Optional Label Styling */
+.form-group label {
   color: #1e3a8a;
-  font-weight: 300;
-  margin-bottom: 10px;
+  font-weight: 600;
+  margin-bottom: 5px; /* Reduced space between label and input */
+  display: block;
 }
 
-/* Paragraph Styling */
-.box p {
-  color: #80c4e0;
-  font-size: 14px;
-  text-align: center;
-}
-
-/* Link Styling */
-.box a {
-  color: #1e3a8a;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.box a:hover {
-  text-decoration: underline;
+/* Centering the Product Form in the Middle Section */
+.middle-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 20px;
 }

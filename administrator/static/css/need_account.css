@@ -1,0 +1,118 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container for the Create Account Form */
+.container {
+    padding: 30px;
+    width: 100%;
+    max-width: 600px; /* Limit the width of the form */
+    background: rgba(255, 255, 255, 0.9); /* Slightly opaque white background */
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    margin: 0 auto; /* Center the form */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Title Styling */
+.container h2 {
+    color: #1e3a8a;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px; /* Reduced margin between title and form */
+}
+
+/* Form Group Styling */
+.form-group {
+    position: relative;
+    margin-bottom: 15px; /* Reduced margin between fields */
+}
+
+/* Input Styles */
+.form-group input {
+    width: 100%;
+    padding: 12px 20px; /* Reduced padding for better fitting */
+    padding-left: 30px; /* Adjusted left padding */
+    font-size: 14px; /* Slightly smaller font size */
+    color: #1e3a8a;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.form-group input::placeholder {
+    color: #80c4e0;
+}
+
+/* Submit Button Styling */
+.form-group button[type="submit"] {
+    background: #1e3a8a;
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px; /* Reduced padding */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-group button[type="submit"]:hover {
+    background-color: #1565c0;
+}
+
+/* Forgot Password and Need an Account Link Styling */
+.form-group .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.form-group .links a {
+    color: #1e3a8a;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.form-group .links a:hover {
+    color: #1565c0;
+}
+
+/* Focus and Hover Effects */
+.form-group input:focus {
+    border-color: #1e3a8a;
+    box-shadow: inset 0 0 25px rgba(30, 58, 138, 0.4);
+}
+
+/* Optional Label Styling */
+.form-group label {
+    color: #1e3a8a;
+    font-weight: 600;
+    margin-bottom: 5px; /* Reduced space between label and input */
+    display: block;
+}
+
+/* Centering the Create Account Form in the Middle Section */
+.middle-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%; /* Ensure the form fits on smaller screens */
+        padding: 20px;
+    }
+}

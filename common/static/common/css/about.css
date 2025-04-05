@@ -1,0 +1,165 @@
+/* General Layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+}
+/* Header Styling */
+.contact-header {
+    background-image: url("{% static 'common/images/S_N_images/modern-street-led-lighting-pole-260nw-2224502473.webp' %}");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;  /* Make sure the layout is column based */
+    align-items: center;     /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    margin: 20px;
+}
+
+/* Title */
+.about-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px 0;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 100%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    flex: 0 0 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.sidebar-images {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: scrollImages 15s linear infinite;
+    justify-content: center; /* Align images horizontally */
+}
+
+.sidebar-images img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+/* Scrolling Animation */
+@keyframes scrollImages {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Main Content */
+.main-content {
+    width: 80%;  /* Set a width for the main content */
+    max-width: 1200px; /* Ensure it doesn't stretch too wide */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: center;  /* Center the text in the main content */
+}
+
+.factsheet-section,
+.about-section {
+    margin-bottom: 20px;
+}
+
+/* Factsheet Table */
+.factsheet-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: center;  /* Center the table text */
+}
+
+.factsheet-table th, .factsheet-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.factsheet-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* About Section */
+.about-section h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .main-content {
+        flex: 0 0 65%;
+        max-width: 65%;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-content {
+        flex: 0 0 55%;
+        max-width: 55%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar-images img {
+        width: 250px;
+    }
+
+    .main-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .about-title {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-title {
+        font-size: 1.6em;
+    }
+
+    .factsheet-table th, .factsheet-table td {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .about-section p {
+        font-size: 1em;
+    }
+}

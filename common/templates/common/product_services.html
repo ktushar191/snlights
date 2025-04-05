@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product & Services</title>
+  <link rel="stylesheet" href="{% static 'common/css/product.css' %}">
+  <style>
+    /* Styling for the background section with the heading */
+    .background-section {
+      background-image: url("{% static 'common/images/S_N_images/modern-street-led-lighting-pole-260nw-2224502473.webp' %}"); /* Replace with actual image */
+      background-size: cover;
+      background-position: top center;
+      background-attachment: fixed;  /* This will make the background stay fixed as the user scrolls */
+      height: 300px;  /* Adjust height based on your needs */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    /* Styling for the heading text over the background */
+    .background-section h2 {
+      font-size: 3em;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);  /* Optional: Text shadow for better contrast */
+    }
+
+     
+
+    /* Make the layout responsive */
+    @media (max-width: 768px) {
+      .product-layout {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+      }
+
+      .background-section h2 {
+        font-size: 2em;  /* Adjust font size for smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .background-section h2 {
+        font-size: 1.6em;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Background Section with Heading -->
+  <div class="background-section">
+    <h2>Product & Services</h2>
+  </div>
+
+  <div class="container">
+    <div class="product-layout">
+      <!-- Left Column -->
+      <div class="left-column">
+        <div class="category">
+          <h3>Crompton Street Lights</h3>
+          <ul>
+            <li>350W Crompton LED Street Light</li>
+            <li>220W Crompton LED Street Light</li>
+            <li>Crompton 120w Led Street Lights</li>
+            <li>180W Crompton LED Street Light</li>
+            <li>...more</li>
+          </ul>
+        </div>
+
+        <div class="category">
+          <h3>Led Driver</h3>
+          <ul>
+            <li>Led Driver 50w 1500mA</li>
+            <li>Led Driver 100W 300mA</li>
+            <li>Led Driver 36W 600mA / 900mA</li>
+            <li>LED DRIVER 24W 300mA / 600mA</li>
+            <li>...more</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Center Column -->
+      <div class="center-column">
+        <div class="category">
+          <h3>Bajaj LED Flood Light</h3>
+          <ul>
+            <li>200W Bajaj LED Flood Light</li>
+            <li>500W Bajaj LED Flood Light</li>
+            <li>Bajaj Flood Light</li>
+            <li>250W Bajaj LED Flood Light</li>
+            <li>...more</li>
+          </ul>
+        </div>
+
+        <div class="category">
+          <h3>Havells Street Light</h3>
+          <ul>
+            <li>150W Havells Led Street Light</li>
+            <li>120w Havells Led Street Lights</li>
+            <li>200W Havells LED Street Light</li>
+            <li>Havells Street Lights</li>
+            <li>...more</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="right-column">
+        <div class="category">
+          <h3>Surya LED Street Light</h3>
+          <ul>
+            <li>Surya 45W LED Street Light</li>
+            <li>Surya 100W LED Street Light</li>
+            <li>Surya 220W LED Street Light</li>
+            <li>Surya 180W LED Street Light</li>
+            <li>...more</li>
+          </ul>
+        </div>
+
+        <div class="category">
+          <h3>Flameproof Light Fittings</h3>
+          <ul>
+            <li>Flameproof Led Street Light</li>
+            <li>Sudhir Flameproof High bay Light</li>
+            <li>100W FLP/WP Flood Light</li>
+            <li>Sudhir 60W Flameproof Hand Lamp</li>
+            <li>...more</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

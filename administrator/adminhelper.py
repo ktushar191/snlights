@@ -131,3 +131,25 @@ def get_all_company_details():
     except Exception as e:
         print(f"Error occurred: {e}")
         return None
+    
+def delete_company(company_id):
+    try:
+        # Establishing a connection to the database
+        conn = pymysql.connect(**db_config)
+        cur = conn.cursor()
+
+        # SQL query to delete a company by ID
+        query = '''DELETE FROM add_company WHERE id = %s'''
+        cur.execute(query, (company_id,))  # (company_id,) is a tuple, to match the parameter format
+
+        # Commit the transaction to save changes
+        conn.commit()
+
+        # Close the cursor and the connection
+        cur.close()
+        conn.close()
+
+        return True  # Successfully deleted
+    except Exception as e:
+        print(f"Error occurred: {e}")
+        return False  # Failed to delete

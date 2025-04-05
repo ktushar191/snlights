@@ -71,15 +71,7 @@ def company_list(request):
 
 
 
-
-    # Use raw SQL to fetch company details
-    import pdb;pdb.set_trace()
-    with connection.cursor() as cursor:
-        cursor.execute("SELECT id, name, address, contact_number, other_info FROM add_company")
-        companies = cursor.fetchall()  # Fetch all rows
-
-    # Passing the company data to the template
-    return render(request, 'company_list.html', {'companies': companies})
+    
         
 def edit_company(request, company_id):
 
@@ -117,29 +109,33 @@ def edit_company(request, company_id):
         return render(request, 'administrator/edit_company.html', {'company': company})
 
 
-def delete_company(request, company_id):
-    # Delete the company using raw SQL
-    with connection.cursor() as cursor:
-        cursor.execute("DELETE FROM add_company WHERE id = %s", [company_id])
-    
-    # Redirect to the company list after deletion
-    return redirect('company_list')
+def delete_company(request, id):
+    # Ensure the request is a POST request for deletion
+    if request.method == 'POST':
+        # Call the function to delete the company from the database
+        success = delete_company(id)
+        
+        if success:
+            # Redirect to the company list after successful deletion
+            return redirect('company_list')  # Update 'company_list' with your actual URL name
+        else:
+            # If deletion fails, show an error message (optional)
+            return HttpResponseForbidden("An error occurred while deleting the company.")
+    else:
+        return HttpResponseForbidden("Invalid request method.")
 
 
 def add_category(request):
     if request.method == 'GET':
-        # Adding common context (if required)
         context = {}
         context = commonhelper.get_login_user_common_context(request.user, context)
         return render(request, 'administrator/add_category.html', context)
     
     if request.method == 'POST':
-        # Retrieve form data from the POST request
         category_name = request.POST.get('category_name')
-        # description = request.POST.get('description', '')  # Default to empty string if not provided
+        # description = request.POST.get('description', '')  
         
         try:
-            # Prepare category data to be inserted into the database
             category_data = {}
             category_data.update(
                 {
@@ -186,10 +182,10 @@ def forgot_password(request):
          pass
 
 def need_account(request):
-    if request.method=="GET":
+    if request.method == "GET":
         context = {}
-        context = commonhelper.get_login_user_common_context(request.user,context)
-        return render(request,'administrator/need_account.html',context)
+        # You might have some logic to populate the context
+        return render(request, 'administrator/need_account.html', context)
     if request.method=="POST":
-        pass
-
+         pass
+                

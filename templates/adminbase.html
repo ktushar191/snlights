@@ -40,13 +40,14 @@
             <div class="left-section">
                 <ul class="tabs">
                     <!-- Login Tab -->
-                    <li><a href="{% url 'login' %}" onclick="showLoginForm()"target="contentArea">Login</a></li>
-        
+                    <li><a href="{% url 'login' %}" onclick="showLoginForm()"target="contentArea">Login</a></li> 
+                    
+                       
                     <!-- Add Product Tab with Sub-tabs -->
                     <li>
                         <a href="#" onclick="toggleSubTabs('addProductSubTabs')"> Product</a>
                         <ul class="sub-tabs" id="addProductSubTabs" style="display: none;">
-                            <li><a href="administrator/add_product" target="contentArea">Add Product</a></li>
+                            <li><a href="/administrator/add_product" target="contentArea">Add Product</a></li>
                             <li><a href="administrator/edit_product" target="contentArea">Edit Product</a></li>
                             <li><a href="administrator/delete_product" target="contentArea">Delete Product</a></li>
                         </ul>
@@ -56,8 +57,8 @@
                     <li>
                         <a href="#" onclick="toggleSubTabs('addCompanySubTabs')"> Company</a>
                         <ul class="sub-tabs" id="addCompanySubTabs" style="display: none;">
-                            <li><a href="/administrator/add_company" >Add Company</a></li>
-                            <li><a href="/administrator/company_list" >Edit Company</a></li>
+                            <li><a href="/administrator/add_company"target="contentArea">Add Company</a></li>
+                            <li><a href="/administrator/company_list"target="contentArea">Edit Company</a></li>
 
                             <li><a href="/administrator/delete_company" >Delete Company</a></li>
                         </ul>
@@ -67,7 +68,7 @@
                     <li>
                         <a href="#" onclick="toggleSubTabs('addCategorySubTabs')"> Category</a>
                         <ul class="sub-tabs" id="addCategorySubTabs" style="display: none;">
-                            <li><a href="/administrator/add_category" >Add Category</a></li>
+                            <li><a href="/administrator/add_category"target="contentArea">Add Category</a></li>
                             <li><a href="/administrator/edit_category" >Edit Category</a></li>
                             <li><a href="/administrator/delete_category" >Delete Category</a></li>
                         </ul>

@@ -1,48 +1,43 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login Page</title>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/login_style.css' %}">
-        <script src="{% static 'js/login_script.js' %}" defer></script> <!-- Link to external JS -->
-    </head>
-    <body>
-        <section>
-            <div class="box">
-                <div class="form">
-                    <h2>Login</h2>
-                    <form id="loginForm" onsubmit="return validateForm()">
-                        <div class="inputBx">
-                            <input type="text" id="username" placeholder="Username">
-                            <!-- <img src="user.png" alt="user icon"> -->
-                        </div>
-                        <div class="inputBx">
-                            <input type="password" id="password" placeholder="Password">
-                            <!-- <img src="lock.png" alt="lock icon"> -->
-                        </div>
-                        <label class="remember">
-                            <input type="checkbox" id="remember">Remember Me
-                        </label>
-                        <div class="inputBx">
-                            <input type="submit" value="Login">
-                        </div>
-                    </form>
-                    <p>Forgot <a href="forgot_password.html">Password</a></p>
-                    <p>Need an <a href="need_account.html">Account</a></p>
-
-                    <!-- Success Message Popup -->
-                    <div id="successModal" class="modal">
-                        <div class="modal-content">
-                            <span class="close-btn" onclick="closeModal()">&times;</span>
-                            <h2>Login Successful!</h2>
-                            <p>Welcome to your dashboard.</p>
-                            <button onclick="closeModal()">OK</button>
-                        </div>
-                    </div>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+</head>
+<body>
+<div class="middle-section">
+    <div class="container">
+        <h1>Login</h1>
+        <div class="container">
+            <form onsubmit="return login_form_submit(event);" id="login_form" name="login_form" action="." method="post">
+                {% csrf_token %}
+        
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required />
             </div>
-        </section>
-    </body>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required />
+            </div>
+            <div class="form-group remember-me">
+                <input type="checkbox" id="remember-me" />
+                <label for="remember-me">Remember me</label>
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+            <div class="form-group links">
+                <a href="/administrator/reset-password/">Forgot your password?</a>
+
+
+                <a href="{% url 'create-account' %}">Need an Account?</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
 </html>

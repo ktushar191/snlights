@@ -127,11 +127,11 @@
                                 <div style="display: flex; align-items: center; justify-content: flex-start;">
                                     <img src="{% static 'common/images/S_N_images/sn-lights-logo-120x120.webp' %}" alt="S N Lights Logo" 
                                          style="width: 80px; height: 80px; margin-right: 200px;">
-                                    <h2 style="font-size: 24px; margin: 0;">S N Lights Pvt Ltd</h2>
+                                    <h2 style="font-size: 24px; margin: 0;">S N LIGHTS PVT LTD</h2>
                                 </div>
                             <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                            <li class="dropdown">
+                            <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About Us</a></li>
+                            <!-- <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="shop.html">Sidebar Shop</a></li>
@@ -141,9 +141,9 @@
                                     <li><a href="my-account.html">My Account</a></li>
                                     <li><a href="wishlist.html">Wishlist</a></li>
                                 </ul>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="gallery.html">Products</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                            </li> -->
+                            <li class="nav-item"><a class="nav-link" href="{% url 'product_services' %}">Products & Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact Us</a></li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
@@ -155,7 +155,7 @@
                             <li class="side-menu">
                                 <a href="#">
                                     <i class="fa fa-shopping-bag"></i>
-                                    <span class="badge">3</span>
+                                    <span class="badge"></span>
                                     <p>My Cart</p>
                                 </a>
                             </li>
@@ -216,7 +216,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <h1 class="m-b-20"><strong>Welcome To <br> S N Lights</strong></h1>
+                                <h1 class="m-b-20"><strong>Welcome To <br> S N LIGHTS</strong></h1>
                                 <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
                                 <p><a class="btn hvr-hover" href="#">Shop New</a></p>
                             </div>

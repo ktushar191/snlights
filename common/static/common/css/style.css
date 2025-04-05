@@ -177,7 +177,7 @@
  .custom-select-box .bootstrap-select .btn-light{
      padding: 4px;
      font-size: 14px;
-     background: #b0b435;
+     background: #ebbf62;
      color: #fff;
      border: none;
      border-radius: 0px;
@@ -2189,7 +2189,7 @@
 }
  .new-account-login h5 {
      font-size: 18px;
-     color: #1111111;
+     /* color: #1111111; */
      font-weight: 600;
 }
  .new-account-login h5 a:hover{
@@ -2254,12 +2254,12 @@
      font-size: 18px;
      font-weight: 700;
 }
- .service-icon a{
+ /* .service-icon a{
      background: rgba(0, 0, 0, 0.9);
      -webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
      -moz-transition: -moz-transform ease-out 0.1s, background 0.2s;
      transition: transform ease-out 0.1s, background 0.2s;
-}
+} */
  .service-icon a{
      display: inline-block;
      font-size: 0px;
@@ -2382,7 +2382,7 @@
      margin-bottom: 12px;
 }
  .contact-info-left ul li p{
-     font-size: 16px;
+     font-size: 10px;
      color: #222222;
      font-weight: 300;
      padding-right: 16px;

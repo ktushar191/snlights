@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - E-Commerce Website</title>
+    <link rel="stylesheet" href="{% static 'common/css/contact.css' %}">
+    <style>
+        .contact-header {
+            background-image: url("{% static 'common/images/S_N_images/modern-street-led-lighting-pole-260nw-2224502473.webp' %}");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="contact-header">
+            <h1>Contact Us</h1>
+            <p>If you have any questions or concerns, feel free to get in touch with us.</p>
+        </header>
+
+        <!-- Split the page into two sections -->
+        <div class="contact-section">
+            <!-- Left Section: Query Form -->
+            <div class="contact-form">
+                <form id="contactForm" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                </form>
+
+                <div id="formMessage" class="form-message"></div>
+            </div>
+
+            <!-- Right Section: Contact Information & Reach Us -->
+            <div class="contact-info">
+                <section class="contact-info-section">
+                    <h2>Contact Information</h2>
+                    <ul>
+                        <li><strong>Email:</strong> support@example.com</li>
+                        <li><strong>Phone:</strong> +1 800-123-4567</li>
+                        <li><strong>Address:</strong> 123 Main St, City, Country</li>
+                    </ul>
+                </section>
+
+                <section class="reach-us">
+                    <h2>Reach Us</h2>
+                    <div class="reach-details">
+                        <p><strong>GROUND FLOOR, 1017/1016, BINAKI LAYOUT, Kamal Road, Common Service Centre, Vivekanand, Gautam Primary School, Sujata Nagar, Mahendri Baug Corner, Nagpur-440017, Maharashtra, India</strong></p>
+                        <a href="https://www.google.com/maps?q=Nagpur" target="_blank" class="btn get-directions">Get Directions</a>
+                    </div>
+
+                    <div class="contact-person">
+                        <h3>Nikhil Ghorpade (CEO)</h3>
+                        <p><a href="tel:+91-XXXXXXXXXX">View Mobile Number</a></p>
+                        <p><strong>74% Call Response Rate</strong></p>
+                    </div>
+
+                    <div class="branch-office">
+                        <h3>Saurabh Bhadre</h3>
+                        <p><strong>Branch Office Address:</strong> Narhe, Pune 411041, India</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'common/contact.js' %}"></script>
+</body>
+
+</html>

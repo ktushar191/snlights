@@ -1,0 +1,151 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+/* Container Styling */
+.container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 20px; /* Larger border-radius for a smoother look */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); /* Larger box-shadow */
+    max-width: 1200px; /* Increased max-width for bigger screens */
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #1e3a8a; /* Changed to match the form's color scheme */
+    margin-bottom: 20px;
+    font-size: 2.5rem; /* Increased font size */
+    font-weight: 700; /* Bold font weight */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 14px 20px; /* Added padding for more space */
+    text-align: left;
+    font-size: 1.1rem; /* Increased font size */
+}
+
+th {
+    background-color: #1e3a8a; /* Matching the header color */
+    color: #fff;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+td a {
+    text-decoration: none;
+    color: #1e3a8a; /* Add color to links for consistency */
+}
+
+td a:hover {
+    color: #1565c0; /* Hover effect for links */
+}
+
+/* Table Row Hover Effect */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/* Button Styling */
+button {
+    padding: 12px 20px; /* Larger padding */
+    font-size: 1.1rem; /* Larger font size */
+    cursor: pointer;
+    border-radius: 10px; /* Rounded corners */
+    border: none;
+    transition: background-color 0.3s ease;
+    font-weight: 600; /* Bold text */
+}
+
+/* Update Button */
+#up {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#up:hover {
+    background-color: #45a049;
+}
+
+/* Delete Button */
+#del {
+    background-color: #f44336;
+    color: white;
+}
+
+#del:hover {
+    background-color: #da190b;
+}
+
+/* Add New Company Button */
+#new3 {
+    background-color: #008CBA;
+    color: white;
+    margin-top: 20px;
+    padding: 14px 25px; /* Increased padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#new3:hover {
+    background-color: #007b8f;
+}
+
+/* Column Header Alignment */
+th#mid {
+    text-align: center;
+    width: 20%;
+}
+
+/* Hover Effects for Buttons */
+button:hover {
+    opacity: 0.8; /* Smooth hover effect */
+}
+
+/* Responsive Adjustments for Small Screens */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Adjust width for smaller screens */
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem; /* Smaller heading for mobile */
+    }
+
+    th, td {
+        font-size: 1rem; /* Adjust table font size for mobile */
+    }
+
+    button {
+        font-size: 1rem; /* Adjust button size for mobile */
+        padding: 10px 15px; /* Adjust button padding */
+    }
+}

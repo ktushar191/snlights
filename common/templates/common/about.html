@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{% static 'common/css/about.css' %}">
+    <script src="{% static 'common/js/about.js' %}" defer></script>
+    <style>
+        /* Styling for the About Us section with background image */
+        .about-title {
+            text-align: center;
+            color: white;
+            font-size: 3em;
+            padding: 100px 20px;
+            background-image: url("{% static 'common/images/S_N_images/modern-street-led-lighting-pole-260nw-2224502473.webp' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional: Text shadow for better contrast */
+        }
+
+        /* Make the background image and text responsive */
+        @media (max-width: 768px) {
+            .about-title {
+                font-size: 2.5em;
+                padding: 80px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-title {
+                font-size: 2em;
+                padding: 60px 15px;
+            }
+        }
+
+        /* Styling for the Factsheet Section */
+        .factsheet-section {
+            margin-top: 20px;
+        }
+
+        .factsheet-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .factsheet-table th, .factsheet-table td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .factsheet-table th {
+            background-color: #f4f4f4;
+        }
+
+        .factsheet-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- About Us Title with Background Image -->
+        <h1 class="about-title">About Us</h1>
+
+        <!-- Auto-scrolling Horizontal Image Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-images">
+                <img src="{% static 'common/images/S_N_images/flood light.jpeg' %}" alt="Image 1">
+                <img src="{% static 'common/images/S_N_images/inventronic led light.jpeg' %}" alt="Image 2">
+                <img src="{% static 'common/images/S_N_images/well glass led.jpeg' %}" alt="Image 3">
+                <img src="{% static 'common/images/S_N_images/OSRAM.jpeg' %}" alt="Image 4">
+                <img src="{% static 'common/images/S_N_images/crompton highway.jpeg' %}" alt="Image 5">
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+           
+            <section class="factsheet-section">
+                <h2>Factsheet</h2>
+                <table class="factsheet-table">
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nature of Business</td>
+                            <td>Trader - Wholesaler/Distributor</td>
+                        </tr>
+                        <tr>
+                            <td>Additional Business</td>
+                            <td>Office / Sale Office</td>
+                        </tr>
+                        <tr>
+                            <td>Company CEO</td>
+                            <td>Nikhil Ghorpade</td>
+                        </tr>
+                        <tr>
+                            <td>Total Number of Employees</td>
+                            <td>51 to 100 People</td>
+                        </tr>
+                        <tr>
+                            <td>GST Registration Date</td>
+                            <td>08-12-2023</td>
+                        </tr>
+                        <tr>
+                            <td>Legal Status of Firm</td>
+                            <td>Limited Company</td>
+                        </tr>
+                        <tr>
+                            <td>Annual Turnover</td>
+                            <td>NA</td>
+                        </tr>
+                        <tr>
+                            <td>GST Partner Name</td>
+                            <td>Nikhil Dipak Ghorpade, Saurabh Lahuji Bhadre</td>
+                        </tr>
+                        <tr>
+                            <td>Tan No.</td>
+                            <td>NGPS2*****</td>
+                        </tr>
+                        <tr>
+                            <td>Banker</td>
+                            <td>Kotak Mahindra Bank</td>
+                        </tr>
+                        <tr>
+                            <td>GST No.</td>
+                            <td>27ABLCS9404M1ZO</td>
+                        </tr>
+                        <tr>
+                            <td>CIN No.</td>
+                            <td>U27400MH2023PTC412458</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- About Us Section -->
+            <section class="about-section animate-on-scroll">
+                <h2>About Us</h2>
+                <p><strong>SN Lights Private Limited</strong></p>
+                <p>We, SN Lights Private Limited, started its journey towards excellence in the year 2018, and are famous amongst the esteemed wholesaler and trader/wholeseller of an exceptional quality assortment of LED Lights. Offered products range consists of Lighting, LED Street Lights, and LED Flood Lights. Manufactured using high-class material at vendors' end, these LED lights are in conformity with the norms defined by the market.</p>
+
+                <p>Due to our honest business standards and transparent deals, we are steadily making our way to the platform of success by offering a superior grade range of LED lights. We are becoming one of the topmost companies offering a wide range of LED lights. Our adroit team of experts works hard round the clock in close coordination with the client to provide the product of the best quality. We hire vendors based on their product quality, timely delivery, perfect packaging of products, and industry experience.</p>
+
+                <p>Under the strict vigilance and guidance of Mr. Saurabh Bhadre (Director) and Mr. Nikhil Ghorpade (Director), different operations of the firm occur very smoothly. They properly guide the team to implement effective ideas and led the company to new heights in a very short time.</p>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

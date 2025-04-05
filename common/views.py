@@ -65,3 +65,33 @@ def registration(request):
         return render(request,'common/registration.html',{})
     if request.method=="POST":
         pass
+
+def about(request):
+    
+    if request.method=="GET":
+        
+        context={}
+        context=commonhelper.get_login_user_common_context(request.user,context)
+        return render(request,'common/about.html',{})
+    if request.method=="POST":
+        pass
+
+def contact(request):
+    
+    if request.method=="GET":
+        
+        context={}
+        context=commonhelper.get_login_user_common_context(request.user,context)
+        return render(request,'common/contact.html',{})
+    if request.method=="POST":
+        pass
+
+def product_services(request):
+    
+    if request.method=="GET":
+        
+        context={}
+        context=commonhelper.get_login_user_common_context(request.user,context)
+        return render(request,'common/product_services.html',{})
+    if request.method=="POST":
+        pass
